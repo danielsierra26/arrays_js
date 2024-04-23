@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concatenar Cadenas</title>
+</head>
+<body>
+
+<input type="text" id="string1Input" placeholder="Ingrese la primera cadena">
+<input type="text" id="string2Input" placeholder="Ingrese la segunda cadena">
+<button onclick="concatStrings()">Concatenar</button>
+
+<div id="result"></div>
+
+<script>
+function concatStrings() {
+    var string1 = document.getElementById("string1Input").value;
+    var string2 = document.getElementById("string2Input").value;
+
+    var concatenatedString = string1 + ", " + string2;
+
+    document.getElementById("result").innerText = concatenatedString;
+}
+</script>
+
+</body>
+</html>

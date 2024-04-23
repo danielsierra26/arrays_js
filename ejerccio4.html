@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Números Pares</title>
+</head>
+<body>
+
+<input type="text" id="numbersInput" placeholder="Ingrese números separados por coma">
+<button onclick="showPares()">Pares</button>
+
+<div id="originalNumbers"></div>
+<div id="paresNumbers"></div>
+
+<script>
+function showPares() {
+    var numbersInput = document.getElementById("numbersInput").value;
+    var numbers = numbersInput.split(",").map(Number); // Convertir los números a tipo Number
+
+    // Crear tabla para mostrar números originales
+    var originalTable = "<h2>Números Originales</h2><table border='1'><tr><th>Números</th></tr>";
+    for (var i = 0; i < numbers.length; i++) {
+        originalTable += "<tr><td>" + numbers[i] + "</td></tr>";
+    }
+    originalTable += "</table>";
+    document.getElementById("originalNumbers").innerHTML = originalTable;
+
+    // Filtrar los números pares
+    var pares = numbers.filter(function(number) {
+        return number % 2 === 0;
+    });
+
+    // Crear tabla para mostrar números pares
+    var paresTable = "<h2>Números Pares</h2><table border='1'><tr><th>Números Pares</th></tr>";
+    for (var j = 0; j < pares.length; j++) {
+        paresTable += "<tr><td>" + pares[j] + "</td></tr>";
+    }
+    paresTable += "</table>";
+    document.getElementById("paresNumbers").innerHTML = paresTable;
+}
+</script>
+
+</body>
+</html>

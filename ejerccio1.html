@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de números</title>
+</head>
+<body>
+
+<input type="text" id="numbersInput" placeholder="Ingrese números separados por coma">
+<button onclick="calculate()">Calcular</button>
+
+<div id="result"></div>
+
+<script>
+function calculate() {
+    var numbersInput = document.getElementById("numbersInput").value;
+    var numbers = numbersInput.split(",");
+    
+    var sum = 0;
+    var max = -Infinity;
+    var min = Infinity;
+
+    for (var i = 0; i < numbers.length; i++) {
+        var num = parseFloat(numbers[i]);
+        sum += num;
+        if (num > max) {
+            max = num;
+        }
+        if (num < min) {
+            min = num;
+        }
+    }
+
+    var average = sum / numbers.length;
+
+    var result = "Suma: " + sum + "<br>";
+    result += "Mayor: " + max + "<br>";
+    result += "Menor: " + min + "<br>";
+    result += "Media: " + average;
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manejo de Array</title>
+</head>
+<body>
+
+<input type="text" id="elementInput" placeholder="Ingrese un elemento">
+<button onclick="addElement()">Agregar Elemento</button>
+<button onclick="removeElement()">Eliminar Último Elemento</button>
+
+<div id="arrayContent"></div>
+
+<script>
+var array = [];
+
+function addElement() {
+    var element = document.getElementById("elementInput").value;
+    array.push(element);
+    showArray();
+}
+
+function removeElement() {
+    array.pop();
+    showArray();
+}
+
+function showArray() {
+    var arrayContent = document.getElementById("arrayContent");
+    arrayContent.innerText = "Array: " + array.join(", ");
+}
+</script>
+
+</body>
+</html>
